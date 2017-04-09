@@ -1,0 +1,57 @@
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#define MAX 20
+
+using namespace std;
+
+struct persona
+{
+	string nombre;
+	string ciudadresidencia, paisresidencia;
+	string ciudadnacimiento, paisnacimiento;
+	int edad;
+};
+
+void datos_usuario (persona usuario);
+
+
+
+void main()
+{
+	persona usuario;
+	cout<<"Ingrese su nombre: ";
+	getline(cin, usuario.nombre);
+	cout<<"Ingrese su edad: ";
+	cin>> usuario.edad;
+	cin.ignore();
+	cout<<"Ingrese su pais de nacimiento: ";
+	getline(cin, usuario.paisnacimiento);
+	cout<<"Ingrese su ciudad de nacimiento: ";
+	getline(cin, usuario.ciudadnacimiento);
+	cout<<"Ingrese su pais de residencia: ";
+	getline(cin, usuario.paisresidencia);
+	cout<<"Ingrese su ciudad de residencia: ";
+	getline(cin, usuario.ciudadresidencia);
+
+	datos_usuario (usuario);
+
+	getch();
+
+}
+
+
+void datos_usuario (persona usuario)
+{
+	cout<<endl;
+	cout<<"		DATOS DEL USUARIO	"<<endl<<endl;
+	cout<<"Nombre: "<<"\t"<<"\t"<<usuario.nombre<<endl;
+	cout<<"Edad: "<<"\t"<<"\t"<<"\t"<<usuario.edad<<endl;
+	cout<<"Pais nacimiento: "<<"\t"<<usuario.paisnacimiento<<endl;
+	cout<<"Ciudad nacimiento: "<<"\t"<<usuario.ciudadnacimiento<<endl;
+	cout<<"Pais residencia: "<<"\t"<<usuario.paisresidencia<<endl;
+	cout<<"Ciudad residencia: "<<"\t"<<usuario.ciudadresidencia<<endl;
+	cout<<endl;
+}
