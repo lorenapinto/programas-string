@@ -1,0 +1,57 @@
+// Programa para crear una planilla de estudiantes. 
+//Una funcion que reciba: apellido y nombre. Devolvera: apellido, nombre. (es decir une ambos vectores)
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#define MAX 20 
+
+using namespace std;
+void cargar_nombres (string N[], int n);
+void cargar_apellidos (string A[], int n);
+void mostrar (string N[], string A[], int n);
+
+void main()
+{
+	int n;
+	string N[MAX], A[MAX];
+	cout<<"Ingrese la cantidad de usuarios: ";
+	cin>>n;
+	cargar_nombres (N,n);
+	cargar_apellidos (A,n);
+	cout<<endl<<"Los usuarios son: "<<endl;
+	mostrar (N,A,n);
+	getch();
+}
+
+void cargar_nombres (string N[], int n)
+{
+	cin.ignore();
+	for (int i=0; i<n; i++)
+	{
+		cout<<"Nombre["<<i<<"]= ";
+		getline (cin,N[i]);
+	}
+}
+
+void cargar_apellidos (string A[], int n)
+{
+	cin.ignore();
+	for (int i=0; i<n; i++)
+	{
+		cout<<"Apellido["<<i<<"]= ";
+		getline (cin,A[i]);
+	}
+}
+
+void mostrar (string N[], string A[], int n)
+{
+	 //puedo hacer: A[i]+N[i].... pero los nombres me salen sin espacio, por eso solo use un cout
+	cin.ignore();
+	for (int i=0; i<n; i++)
+	{
+		
+		cout<<A[i]<<"\t"<<N[i]<<endl;
+	}
+}
