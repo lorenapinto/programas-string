@@ -1,0 +1,55 @@
+
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+#define MAX 20
+
+using namespace std;
+
+void cargar_usuario (string nombre[], string apellido[], int nota[], int n);
+void mostrar_usuario (string nombre[], string apellido[], int nota[], int n);
+
+void main()
+{
+	int n, nota[MAX];
+	string nombre[MAX], apellido[MAX];
+	cout<<"Ingrese la cantidad de alumnos evaluados: ";
+	cin>>n;
+	cout<<endl;
+	cargar_usuario (nombre,apellido,nota,n);
+	mostrar_usuario (nombre,apellido,nota,n);
+	getch();
+
+}
+
+void cargar_usuario (string nombre[], string apellido[], int nota[], int n)
+{
+	cin.ignore();
+	for (int i=0; i<n; i++)
+	{
+		cout<<"Nombre ["<<i<<"]: ";
+		getline (cin, nombre[i]);
+
+		cout<<"Apellido ["<<i<<"]: ";
+		getline (cin, apellido[i]);
+
+		cout<<"Nota ["<<i<<"]: ";
+		cin>>nota[i];
+		cin.ignore();
+	}
+}
+
+void mostrar_usuario (string nombre[], string apellido[], int nota[], int n)
+{
+	cin.ignore();
+	cout<<"-----------PLANILLA ALUMNOS-----------"<<endl;
+	cout<<endl;
+	cout<<"NOMBRE "<<"\t"<<"APELLIDO"<<"\t"<<"NOTA"<<endl;
+	for (int i=0; i<n; i++)
+	{
+		cout<<nombre[i]<<"\t"<<apellido[i]<<"\t"<<nota[i]<<endl;
+	}
+
+}
